@@ -1,0 +1,25 @@
+Manipulate[
+  Graphics3D[
+    {
+      Thick,
+      Line[{{0, 0, 0}, {l1*Cos[theta1], l1*Sin[theta1], 0}}],
+      Line[{{l1*Cos[theta1], l1*Sin[theta1], 0}, {l1*Cos[theta1] + l2*Cos[theta1 + theta2], l1*Sin[theta1] + l2*Sin[theta1 + theta2], 0}}],
+      Line[{{l1*Cos[theta1] + l2*Cos[theta1 + theta2], l1*Sin[theta1] + l2*Sin[theta1 + theta2], 0}, {l1*Cos[theta1] + l2*Cos[theta1 + theta2] + l3*Cos[theta1 + theta2 + theta3], l1*Sin[theta1] + l2*Sin[theta1 + theta2] + l3*Sin[theta1 + theta2 + theta3], 0}}],
+      Red,
+      PointSize[Large],
+      Point[{0, 0, 0}],
+      Point[{l1*Cos[theta1], l1*Sin[theta1], 0}],
+      Point[{l1*Cos[theta1] + l2*Cos[theta1 + theta2], l1*Sin[theta1] + l2*Sin[theta1 + theta2], 0}],
+      Point[{l1*Cos[theta1] + l2*Cos[theta1 + theta2] + l3*Cos[theta1 + theta2 + theta3], l1*Sin[theta1] + l2*Sin[theta1 + theta2] + l3*Sin[theta1 + theta2 + theta3], 0}]
+    },
+    PlotRange -> {{-3, 3}, {-3, 3}, {-3, 3}},
+    Axes -> True,
+    AxesLabel -> {"x", "y", "z"}
+  ],
+  {theta1, 0, 2*Pi},
+  {theta2, 0, 2*Pi},
+  {theta3, 0, 2*Pi},
+  {l1, 1, 2},
+  {l2, 1, 2},
+  {l3, 1, 2}
+]
